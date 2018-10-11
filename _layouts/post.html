@@ -1,0 +1,32 @@
+---
+layout: default
+---
+<div id="post-wrap" class="row d-flex justify-content-center">
+
+    <div class="card col-md-10 col-xs-12 mt-5">
+
+        <div class="card-header">
+            <h1 class="post-title">{{ page.title | escape }}</h1>
+            <h6 class="card-subtitle post-meta"> 
+                {{ page.date | date: "%A, %-d %B %Y" }}
+                {% if page.author %}
+                    by {{ page.author }}
+                {% endif %}
+            </h6>            
+        </div>
+
+        <hr class="post-ruler"/>
+
+        <div class="card-body">
+            {{ content }}
+        </div>
+
+        <div class="card-footer">
+            {% if site.disqus.shortname %}
+                {% include disqus_comments.html %}
+            {% endif %}
+        </div>
+
+    </div>
+
+</div>

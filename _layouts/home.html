@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+<div id="home-wrap" class="d-flex justify-content-center">
+
+    <div class="card col-md-10 col-xs-12 mt-5">
+
+        <div class="card-header">
+            <h4 class="card-title">Posts</h4>
+        </div>
+
+        <ul class="list-group list-group-flush">
+            {% for post in site.posts %}
+            <li class="list-group-item">                
+                <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+                <small class="post-meta">{{ post.date | date: "%A, %-d %B %Y" }}</small>
+            </li>
+            {% endfor %}
+
+        </ul>
+    </div>
+
+    {{ content }}
+
+</div>
